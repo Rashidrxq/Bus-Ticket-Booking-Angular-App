@@ -1,0 +1,18 @@
+<h2>Available Buses</h2>
+
+
+
+<p *ngIf="filteredBuses.length === 0">
+    No buses available for this route
+</p>
+
+<div *ngFor="let bus of filteredBuses">
+    <h3>{{ bus.name }}</h3>
+    <p>From: {{ bus.from }} → To: {{ bus.to }}</p>
+    <p>Time: {{ bus.time }}</p>
+    <p>Price: ₹{{ bus.price }}</p>
+
+    <button (click)="selectBus(bus)">Select Bus</button>
+
+    <hr>
+</div>

@@ -1,0 +1,12 @@
+<form>
+    <label for="from">FROM:</label>
+    <input type="text" [(ngModel)]="from" name="from" placeholder="Enter your from">
+
+    <label for="to">TO:</label>
+    <input type="text" [(ngModel)]="to" name="to" placeholder="Enter your to">
+
+    <label for="date">DATE:</label>
+    <input type="date" [(ngModel)]="date" name="date">
+
+    <button type="button" (click)="searchBuses()">SEARCH</button>
+</form>
