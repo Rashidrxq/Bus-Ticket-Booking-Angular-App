@@ -1,15 +1,19 @@
 /* ==========================================================================
-   Base Homepage Styles
+   Base Homepage Styles (Minimalist)
    ========================================================================== */
 .home-container {
   width: 100%;
   overflow-x: hidden;
+  /* background-color: var(--bg-color); */
+  background-image: url('https://i.pinimg.com/1200x/0b/8b/d1/0b8bd1c2f70320d420393d4d1cc30e92.jpg');
+
+
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 100px 24px;
 }
 
 .text-center {
@@ -17,13 +21,11 @@
 }
 
 .section-title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
 }
 
 .section-desc {
@@ -32,6 +34,7 @@
   max-width: 600px;
   line-height: 1.6;
   margin-bottom: 60px;
+  font-weight: 400;
 }
 
 .section-desc.centered {
@@ -40,81 +43,89 @@
 }
 
 /* ==========================================================================
-   1. Hero Section
+   1. Hero Section (Clean & Bright)
    ========================================================================== */
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 24px;
-  background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.9) 100%),
-              url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=2071&auto=format&fit=crop') center/cover no-repeat;
+  padding: 120px 24px 80px;
+  background-color: var(--bg-color);
+}
+
+/* Optional: Very subtle background pattern or gradient instead of a heavy image */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50vh;
+  background: linear-gradient(to bottom, #f0f0f3 0%, var(--bg-color) 100%);
+  z-index: 0;
 }
 
 .hero-content {
   z-index: 10;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-title {
-  font-size: clamp(48px, 8vw, 80px);
+  font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -2.5px;
   line-height: 1.1;
   margin-bottom: 24px;
-  color: #fff;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  color: var(--text-primary);
 }
 
 .hero-subtitle {
-  font-size: clamp(18px, 3vw, 24px);
-  color: rgba(255,255,255,0.8);
-  font-weight: 300;
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: var(--text-secondary);
+  font-weight: 400;
   margin-bottom: 60px;
+  line-height: 1.5;
 }
 
-/* Booking Widget (Glassmorphism) */
+/* Booking Widget (Soft UI) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+  background: var(--bg-color-alt);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
 }
 
 .booking-widget {
   padding: 12px;
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .search-form {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .form-group {
   flex: 1;
-  min-width: 200px;
+  min-width: 180px;
   text-align: left;
-  padding: 12px 20px;
-  border-radius: 16px;
-  background: rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
-.form-group:hover {
-  background: rgba(255,255,255,0.05);
+.form-group:focus-within {
+  background: var(--bg-color-alt);
+  border-color: #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .form-group label {
@@ -123,7 +134,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--text-secondary);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
@@ -134,49 +145,49 @@
 }
 
 .input-wrapper svg {
-  color: var(--accent-gold);
+  color: var(--text-primary);
+  opacity: 0.8;
 }
 
 .input-wrapper input {
   width: 100%;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 16px;
   font-weight: 500;
   font-family: 'Inter', sans-serif;
   outline: none;
+  padding: 0;
 }
 
 .input-wrapper input::placeholder {
-  color: rgba(255,255,255,0.3);
+  color: #a0a0a0;
 }
 
-/* For date input icon hiding in webkit */
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .btn-primary {
   padding: 0 32px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #b89326 100%);
-  color: #000;
+  height: 68px;
+  background-color: var(--accent-color);
+  color: #fff;
   border: none;
-  border-radius: 16px;
-  font-weight: 700;
+  border-radius: 12px;
+  font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  transition: all 0.2s ease;
+  min-width: 140px;
 }
 
 .btn-primary:hover {
+  background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
-  filter: brightness(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Scroll Indicator */
@@ -188,19 +199,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   gap: 8px;
   color: var(--text-secondary);
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   animation: bounce 2s infinite;
+  z-index: 10;
 }
 
 /* ==========================================================================
    2. About Us Section
    ========================================================================== */
+.about-section {
+  background-color: var(--bg-color-alt);
+}
+
 .section-split {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
 }
 
 .split-image {
@@ -208,29 +224,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .image-wrapper {
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow-soft);
   position: relative;
-}
-
-.image-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.1);
+  background-color: #f0f0f0;
 }
 
 .image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.7s ease;
+  transition: transform 0.8s ease;
+  opacity: 0.95;
 }
 
 .image-wrapper:hover img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .split-text {
@@ -241,63 +251,72 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .highlight-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
-  padding: 16px 20px;
-  background: var(--glass-bg);
-  border-radius: 16px;
-  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+.highlight-item svg {
+  color: var(--accent-color);
+  margin-top: 2px;
 }
 
 /* ==========================================================================
    3. Steps Section
    ========================================================================== */
+.steps-section {
+  background-color: var(--bg-color);
+}
+
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 32px;
+  margin-top: 60px;
 }
 
 .step-card {
-  padding: 40px 30px;
+  padding: 40px 32px;
   text-align: center;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .step-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
 }
 
 .icon-box {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   margin: 0 auto 24px;
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--accent-gold);
+  background: var(--bg-color);
+  color: var(--accent-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--border-color);
 }
 
 .step-card h3 {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 12px;
-  color: #fff;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .step-card p {
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 15px;
 }
 
@@ -305,30 +324,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    4. Features Section
    ========================================================================== */
 .features-section {
-  background: #020202;
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
+  background-color: var(--bg-color-alt);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px 30px;
   margin-top: 60px;
 }
 
 .feature-item {
-  text-align: center;
+  text-align: left;
 }
 
 .feature-icon {
   margin-bottom: 20px;
+  color: var(--accent-color);
 }
 
 .feature-item h4 {
-  font-size: 18px;
-  color: #fff;
-  margin-bottom: 12px;
+  font-size: 17px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 
 .feature-item p {
@@ -342,7 +364,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    ========================================================================== */
 .minimal-footer {
   padding: 80px 24px 40px;
-  background: #000;
+  background-color: var(--bg-color);
 }
 
 .footer-content {
@@ -350,15 +372,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 0 60px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
   flex-wrap: wrap;
   gap: 40px;
 }
 
 .footer-brand h3 {
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
@@ -375,11 +398,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .social-links a {
   color: var(--text-secondary);
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .social-links a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-color);
 }
 
 .footer-links {
@@ -389,24 +412,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .link-group h4 {
-  color: #fff;
-  font-size: 14px;
+  color: var(--text-primary);
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .link-group a {
   display: block;
   color: var(--text-secondary);
   text-decoration: none;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-size: 14px;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .link-group a:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .footer-bottom {
@@ -420,19 +444,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    Animations & Media Queries
    ========================================================================== */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
 }
 
 @media (max-width: 992px) {
   .section-split {
     flex-direction: column;
+    gap: 40px;
   }
 }
 
@@ -446,6 +471,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .btn-primary {
     width: 100%;
     margin-top: 8px;
+    height: 56px;
+  }
+  .hero-section {
+    padding-top: 100px;
   }
   .footer-links {
     gap: 40px;
