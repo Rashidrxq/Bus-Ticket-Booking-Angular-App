@@ -4,8 +4,7 @@
 .home-container {
   width: 100%;
   overflow-x: hidden;
-  /* background-color: var(--bg-color); */
-  background-image: url('https://i.pinimg.com/1200x/0b/8b/d1/0b8bd1c2f70320d420393d4d1cc30e92.jpg');
+  background-color: var(--bg-color);
 
 
 }
@@ -14,6 +13,7 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 100px 24px;
+  
 }
 
 .text-center {
@@ -55,6 +55,7 @@
   text-align: center;
   padding: 120px 24px 80px;
   background-color: var(--bg-color);
+  background-image: url('https://i.pinimg.com/1200x/0b/8b/d1/0b8bd1c2f70320d420393d4d1cc30e92.jpg');
 }
 
 /* Optional: Very subtle background pattern or gradient instead of a heavy image */
